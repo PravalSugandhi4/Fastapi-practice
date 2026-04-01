@@ -40,3 +40,22 @@ class updatestudentdetailschema(BaseModel):
     studentname:str
     studentage:int
 
+class loginschema(BaseModel):
+    studentemail:EmailStr
+    password:str
+
+class loginschemaresponse(BaseModel):
+    studentname:str
+    studentemail:EmailStr
+    studentage:int
+    class Config:
+        from_attributes = True
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: str | None = None

@@ -10,9 +10,9 @@ from fastapi import APIRouter
 router = APIRouter(tags=["Student APIs"],prefix=
                    "/studentapi")
 
-@router.get("/",tags=["DB connection test"])
-def test_db(db: Session = Depends(get_db)):
-    return {"message": "DB Connected Successfully"}
+# @router.get("/",tags=["DB connection test"])
+# def test_db(db: Session = Depends(get_db)):
+#     return {"message": "DB Connected Successfully"}
 
 @router.post('/addstudentdata/',response_model=addstudentresponse,status_code=201)
 def addstudentdata(request:addstudentschema,db:Session=Depends(get_db)):
